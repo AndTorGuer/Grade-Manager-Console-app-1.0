@@ -22,7 +22,7 @@ namespace Lab1_Andres
                 Console.WriteLine("Option 8: Exit");
             }
 
-            static void showGrades(List<double> gradeList) 
+            static void showGrades(List<double> gradeList)
             {
                 for (int i = 0; i < gradeList.Count; i++)
                 {
@@ -30,6 +30,31 @@ namespace Lab1_Andres
                 }
                 Console.WriteLine("Press any key to continue:");
                 Console.ReadKey();
+            }
+
+            static void addGrades(double grade, List<double> gradeList)
+            {
+                try //we are using try catch to get any errors/exceptions when we run the following code
+                {
+                    string answer = "y";
+                    while (answer == "y") // this loop is used to get user to enter grades and decide if wants to continue or not
+                    {
+                        Console.WriteLine("Enter the grade:");
+                        string gradeString = Console.ReadLine();
+                        grade = double.Parse(gradeString);
+                        gradeList.Add(grade);
+                        Console.WriteLine("Do you want to add another grade (y/n)?");
+                        answer = Console.ReadLine();
+                    }
+                }
+
+                catch (Exception e) // catches the error and returns to main menu
+                {
+                    Console.WriteLine(e.Message); // Prints an error message of what went wrong
+                    Console.WriteLine("Press any key to continue:");
+                    Console.ReadKey();
+                }
+
             }
 
             static void getAverage(List<double> gradeList)
@@ -46,6 +71,9 @@ namespace Lab1_Andres
                 Console.WriteLine("Press any key to continue:");
                 Console.ReadKey();
             }
+
+
+
         }
     }
 }
