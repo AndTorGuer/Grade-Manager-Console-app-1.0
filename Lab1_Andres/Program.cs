@@ -1,11 +1,75 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+/// <summary>
+/// Claim Academy
+/// Andres Torres Guerrero
+/// Lab 1 - Grades Manager
+/// </summary>
 namespace Lab1_Andres
 {
     class Program
     {
         static void Main(string[] args)
         {
+            double grade = 0;
+            List<double> gradeList = new List<double>(); // list to be used to store the grades        
+
+            int selection = 10;
+            while (selection < 12) // this section encapsulates the desicion making through methods
+            {
+                showMenu();
+                string choice = Console.ReadLine();
+                int choice2 = int.Parse(choice);// takes user input converts it to an integer value to be used in the switch selection
+
+                switch (choice2)
+                {
+                    case 1:
+                        showGrades(gradeList);
+                        break;
+
+                    case 2:
+                        addGrades(grade, gradeList);
+                        break;
+
+                    case 3:
+                        getAverage(gradeList);
+                        break;
+
+                    case 4:
+                        topGrade(gradeList);
+                        break;
+
+                    case 5:
+                        bottomGrade(gradeList);
+                        break;
+
+                    case 6:
+                        removeGrade(gradeList);
+                        break;
+
+                    case 7:
+                        editGrade(gradeList);
+                        break;
+
+                    case 8:
+                        if (getExit() == true)
+                        {
+                            Environment.Exit(0); // handles the termination of the program 
+                            break;
+                        }
+
+                        else
+                        {
+                            break;
+                        }
+
+
+                    default: // handles exceptions were the user selection was invalid and brings up the main menu
+                        Console.WriteLine("Invalid entry\nBack to Main Menu");
+                        break;
+                }
+            }
 
             static void showMenu() //used method to print a text menu for user to see
             {
