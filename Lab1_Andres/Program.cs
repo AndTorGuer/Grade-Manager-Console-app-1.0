@@ -156,6 +156,36 @@ namespace Lab1_Andres
                     Console.ReadKey();
                 }
             }
+
+            static bool getExit()
+            {
+                string y = "y",
+                       n = "n";
+                bool answer = false;
+                try
+                {
+                    Console.WriteLine("Do you want to exit (y/n)?"); // desicion making part, giving user a second chance to think
+                    string input = Console.ReadLine();
+
+                    if (input.Equals(y)) // loop returns value depending choice to give to out side funtion
+                    {
+                        answer = true;
+                    }
+
+                    else if (input.Equals(n))
+                    {
+                        answer = false;
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Press any key to continue:");
+                    Console.ReadKey();
+                }
+                return answer;
+            }
         }
     }
 }
