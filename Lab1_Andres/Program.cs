@@ -32,7 +32,30 @@ namespace Lab1_Andres
                 Console.ReadKey();
             }
 
+            static void addGrades(double grade, List<double> gradeList)
+            {
+                try //we are using try catch to get any errors/exceptions when we run the following code
+                {
+                    string answer = "y";
+                    while (answer == "y") // this loop is used to get user to enter grades and decide if wants to continue or not
+                    {
+                        Console.WriteLine("Enter the grade:");
+                        string gradeString = Console.ReadLine();
+                        grade = double.Parse(gradeString);
+                        gradeList.Add(grade);
+                        Console.WriteLine("Do you want to add another grade (y/n)?");
+                        answer = Console.ReadLine();
+                    }
+                }
 
+                catch (Exception e) // catches the error and returns to main menu
+                {
+                    Console.WriteLine(e.Message); // Prints an error message of what went wrong
+                    Console.WriteLine("Press any key to continue:");
+                    Console.ReadKey();
+                }
+
+            }
         }
     }
 }
