@@ -48,6 +48,7 @@ namespace Lab1_Andres
                     }
                 }
 
+
                 catch (Exception e) // catches the error and returns to main menu
                 {
                     Console.WriteLine(e.Message); // Prints an error message of what went wrong
@@ -71,9 +72,7 @@ namespace Lab1_Andres
                 Console.WriteLine("Press any key to continue:");
                 Console.ReadKey();
             }
-
-
-
+ 
         }
     }
 }
