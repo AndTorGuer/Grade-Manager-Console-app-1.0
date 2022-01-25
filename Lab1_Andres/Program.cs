@@ -119,6 +119,43 @@ namespace Lab1_Andres
                 }
 
             }
+
+            static void editGrade(List<double> gradeList)
+            {
+                string answer = "y";
+                try
+                {
+                    while (answer == "y")
+                    {   // this loop is used to get user to enter grades that wants
+                        // to replace/edit and decide if you want to continue or not
+                        showGrades(gradeList);
+                        Console.WriteLine("Enter the student# for grade to be edited");
+                        string indexString = Console.ReadLine();
+                        int index = int.Parse(indexString);
+
+                        Console.WriteLine("Enter the new grade");
+                        string newGradeString = Console.ReadLine();
+                        double newGrade = double.Parse(newGradeString);
+
+                        gradeList[index - 1] = newGrade;
+
+                        Console.WriteLine("Do you want to edit another grade (y/n)?");
+                        answer = Console.ReadLine();
+                    }
+                    Console.WriteLine("This is your new grade list:"); // shows user list with changes made 
+                    showGrades(gradeList); // modified list
+                    // section below is to let the result open until the user decides to go back to main menu
+                    Console.WriteLine("\n Press any key to continue:");
+                    Console.ReadKey();
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Press any key to continue:");
+                    Console.ReadKey();
+                }
+            }
         }
     }
 }
