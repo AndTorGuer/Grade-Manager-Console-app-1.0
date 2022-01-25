@@ -81,6 +81,13 @@ namespace Lab1_Andres
                 Console.ReadKey();
             }
 
+            static void bottomGrade(List<double> gradeList)
+            {
+                Console.WriteLine("The bottom grade is: " + gradeList.Min() + "\n");
+                // section below is to let the result open until the user decides to go back to main menu
+                Console.WriteLine("Press any key to continue:");
+                Console.ReadKey();
+            }
         }
     }
 }
