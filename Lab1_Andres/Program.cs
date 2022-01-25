@@ -88,6 +88,37 @@ namespace Lab1_Andres
                 Console.WriteLine("Press any key to continue:");
                 Console.ReadKey();
             }
+
+            static void removeGrade(List<double> gradeList)
+            {
+                string answer = "y";
+                try
+                {
+                    while (answer == "y") // this loop is used to get user to remove grades and decide if wants to continue or not
+                    {
+                        showGrades(gradeList);
+                        Console.WriteLine("Enter the studen# for the grade to be removed");
+                        string indexString = Console.ReadLine();
+                        int index = int.Parse(indexString);
+                        gradeList.RemoveAt(index - 1);
+                        Console.WriteLine("Do you want to remove another grade (y/n)?");
+                        answer = Console.ReadLine();
+                    }
+                    Console.WriteLine("This is your new grade list:"); // shows user list with changes made 
+                    showGrades(gradeList); // modified list
+                    // section below is to let the result open until the user decides to go back to main menu
+                    Console.WriteLine("\n Press any key to continue:");
+                    Console.ReadKey();
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Press any key to continue:");
+                    Console.ReadKey();
+                }
+
+            }
         }
     }
 }
