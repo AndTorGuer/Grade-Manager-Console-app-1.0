@@ -72,7 +72,15 @@ namespace Lab1_Andres
                 Console.WriteLine("Press any key to continue:");
                 Console.ReadKey();
             }
- 
+
+            static void topGrade(List<double> gradeList)
+            {
+                Console.WriteLine("The top grade is: " + gradeList.Max() + "\n");
+                // section below is to let the result open until the user decides to go back to main menu
+                Console.WriteLine("Press any key to continue:");
+                Console.ReadKey();
+            }
+
         }
     }
 }
