@@ -32,7 +32,20 @@ namespace Lab1_Andres
                 Console.ReadKey();
             }
 
-
+            static void getAverage(List<double> gradeList)
+            {
+                double sum = 0;
+                double average = 0;
+                foreach (double value2 in gradeList) // loop used to calculate the average of the grades 
+                {
+                    sum += value2;
+                    average = sum / gradeList.Count;
+                }
+                // section below is to let the result open until the user decides to go back to main menu
+                Console.WriteLine("The class average is: " + average + "\n");
+                Console.WriteLine("Press any key to continue:");
+                Console.ReadKey();
+            }
         }
     }
 }
