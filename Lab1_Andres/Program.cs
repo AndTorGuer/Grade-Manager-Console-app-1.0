@@ -22,7 +22,15 @@ namespace Lab1_Andres
                 Console.WriteLine("Option 8: Exit");
             }
 
-
+            static void showGrades(List<double> gradeList) 
+            {
+                for (int i = 0; i < gradeList.Count; i++)
+                {
+                    Console.WriteLine("student " + (i + 1) + ": " + gradeList[i]);
+                }
+                Console.WriteLine("Press any key to continue:");
+                Console.ReadKey();
+            }
 
 
         }
